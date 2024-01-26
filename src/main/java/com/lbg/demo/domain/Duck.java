@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Duck {
@@ -14,6 +15,16 @@ public class Duck {
 	public String name;
 
 	public String superColour;
+	@ManyToOne
+	private River river;
+
+	public River getRiver() {
+		return river;
+	}
+
+	public void setRiver(River river) {
+		this.river = river;
+	}
 
 	public void setSuperColour(String superColour) {
 		this.superColour = superColour;
